@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Note</string>
+    <string name="settings">settings</string>
+    <string name="delete">delete</string>
+    <string name="menu_add">menu_add</string>
+</resources>

@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NoteTextFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/nameField"
+            android:layout_width="0dp"
+            android:textSize="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Название:" />
+
+        <TextView
+            android:id="@+id/textViewForName"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/dateField"
+            android:layout_width="0dp"
+            android:textSize="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Дата:" />
+
+        <TextView
+            android:id="@+id/textViewForDate"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="Date" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/descField"
+            android:layout_width="0dp"
+            android:textSize="10sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Описание:" />
+
+        <TextView
+            android:id="@+id/textViewForDesc"
+            android:layout_width="0dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="name" />
+
+    </LinearLayout>
+
+</LinearLayout>
