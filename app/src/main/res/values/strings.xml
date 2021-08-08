@@ -1,6 +1,69 @@
 <resources>
     <string name="app_name">Note</string>
-    <string name="settings">settings</string>
-    <string name="delete">delete</string>
-    <string name="menu_add">menu_add</string>
+    <string name="name1">Заметка 1</string>
+    <string name="name2">Заметка 2</string>
+    <string name="name3">Заметка 3</string>
+    <string name="name4">Заметка 4</string>
+    <string name="name5">Заметка 5</string>
+    <string name="name6">Заметка 6</string>
+    <string name="name7">Заметка 7</string>
+    <string name="name8">Заметка 8</string>
+    <string name="name9">Заметка 9</string>
+    <string name="name10">Заметка 10</string>
+    <string name="name11">Заметка 11</string>
+    <string name="name12">Заметка 12</string>
+    <string name="name13">Заметка 13</string>
+    <string name="name14">Заметка 14</string>
+    <string name="name15">Заметка 15</string>
+    <string name="name16">Заметка 16</string>
+    <string name="name17">Заметка 17</string>
+    <string name="date1">21.09.2021</string>
+    <string name="date2">22.09.2021</string>
+    <string name="date3">23.09.2021</string>
+    <string name="date4">24.09.2021</string>
+    <string name="date5">25.09.2021</string>
+    <string name="date6">26.09.2021</string>
+    <string name="date7">27.09.2021</string>
+    <string name="date8">27.09.2021</string>
+    <string name="date9">27.09.2021</string>
+    <string name="date10">27.09.2021</string>
+    <string name="date11">27.09.2021</string>
+    <string name="date12">27.09.2021</string>
+    <string name="date13">27.09.2021</string>
+    <string name="date14">27.09.2021</string>
+    <string name="date15">27.09.2021</string>
+    <string name="date16">27.09.2021</string>
+    <string name="date17">27.09.2021</string>
+
+    <string name="description1">Текс </string>
+    <string name="description2">Текс </string>
+    <string name="description3">Текс</string>
+    <string name="description4">Текс</string>
+    <string name="description5">Текс</string>
+    <string name="description6">Текст</string>
+    <string name="description7">Текс</string>
+    <string name="description8">Текс</string>
+    <string name="description9">Текс</string>
+    <string name="description10">Текс</string>
+    <string name="description11">Текс</string>
+    <string name="description12">Текс</string>
+    <string name="description13">Текс</string>
+    <string name="description14">Текс</string>
+    <string name="description15">Текс</string>
+    <string name="description16">Текс</string>
+    <string name="description17">Текс</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -2,22 +2,16 @@ package com.example.home_work_7_note;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+
+import java.util.Calendar;
 
 public class NoteTextFragment extends Fragment {
     private boolean isLand = false;
@@ -26,18 +20,20 @@ public class NoteTextFragment extends Fragment {
     private static final String ARG_DATE = "date";
     private static final String ARG_DESCRIPTION = "description";
 
-    Note note;
+    TextView add_note_name;
+    TextView add_note_desc;
+    com.example.home_work_7_note.Note note;
+
     private TextView textViewNoteName;
-    private TextView textViewNoteDate;
     private TextView textViewNoteDescription;
 
     public NoteTextFragment() {
     }
 
-    public static NoteTextFragment newInstance(Note note) {
+    public static NoteTextFragment newInstance(com.example.home_work_7_note.Note note) {
         Bundle args = new Bundle();
         args.putString(ARG_NAME, note.getName());
-        args.putString(ARG_DATE, note.getDate());
+        args.putString(ARG_DATE, note.getDate().toString());
         args.putString(ARG_DESCRIPTION, note.getDescription());
 
         NoteTextFragment fragment = new NoteTextFragment();
@@ -50,10 +46,9 @@ public class NoteTextFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             String name = getArguments().getString(ARG_NAME);
-            String date = getArguments().getString(ARG_DATE);
             String description = getArguments().getString(ARG_DESCRIPTION);
 
-            note = new Note(name, date, description);
+            note = new com.example.home_work_7_note.Note(name, Calendar.getInstance().getTime(), description);
         }
     }
 
@@ -63,30 +58,16 @@ public class NoteTextFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_note_text, container, false);
 
-        textViewNoteName = view.findViewById(R.id.textViewForName);
-        textViewNoteDate = view.findViewById(R.id.textViewForDate);
-        textViewNoteDescription = view.findViewById(R.id.textViewForDesc);
+        textViewNoteName = view.findViewById(R.id.edit_Text_For_Name);
+        textViewNoteDescription = view.findViewById(R.id.edit_text_ForDesc);
 
         isLand = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
-        setHasOptionsMenu(true);
+
+
+        add_note_name = view.findViewById(R.id.edit_Text_For_Name);
+        add_note_desc = view.findViewById(R.id.edit_text_ForDesc);
 
         return view;
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.fragment_menu, menu);
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if (item.getItemId() == R.id.menu_back) {
-            requireActivity().getSupportFragmentManager().popBackStack();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
 
@@ -98,7 +79,6 @@ public class NoteTextFragment extends Fragment {
 
     private void updateText() {
         textViewNoteName.setText(note.getName());
-        textViewNoteDate.setText(note.getDate());
         textViewNoteDescription.setText(note.getDescription());
     }
 }

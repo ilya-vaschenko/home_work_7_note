@@ -1,27 +1,30 @@
 package com.example.home_work_7_note;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentManager;
 
 public class MainActivity extends AppCompatActivity {
+    NoteSource noteSource;
+    private Navigation navigation;
+    private com.example.home_work_7_note.Publisher publisher = new com.example.home_work_7_note.Publisher();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
-       initView();
+        noteSource = new NoteSourceImpl(this);
+        navigation = new Navigation(getSupportFragmentManager());
+
+        getNavigation().addFragment(NoteFragment.newInstance(), false);
+        initView();
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragmentContainerNoteList, NoteListFragment.newInstance())
+                .replace(R.id.fragmentContainerNoteList, NoteListFragment.newInstance(noteSource))
                 .commit();
-    }
+ }
 
     private void initView() {
         initToolbar();
@@ -30,34 +33,22 @@ public class MainActivity extends AppCompatActivity {
     private void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
     }
-
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if(id == R.id.settings) {
-            //TODO
-            return true;
-        }
-        if(id == R.id.menu_add)  {
-            //TODO
-            return true;
-        }
-        if(id == R.id.menu_delete) {
-            //TODO
-            return true;
-        }
-
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
         return true;
+    }
+
+    public Navigation getNavigation() {
+        return navigation;
+    }
+
+    public com.example.home_work_7_note.Publisher getPublisher() {
+        return publisher;
     }
 
 }

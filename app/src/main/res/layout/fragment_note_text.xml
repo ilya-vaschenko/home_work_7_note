@@ -14,64 +14,32 @@
         <TextView
             android:id="@+id/nameField"
             android:layout_width="0dp"
-            android:textSize="10sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Название:" />
+            android:text="Name" />
 
         <TextView
-            android:id="@+id/textViewForName"
+            android:id="@+id/edit_Text_For_Name"
             android:layout_width="0dp"
-            android:textSize="20sp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="name" />
+            android:layout_weight="4"
+            tools:text="@tools:sample/full_names" />
 
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp">
 
-        <TextView
-            android:id="@+id/dateField"
-            android:layout_width="0dp"
-            android:textSize="10sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Дата:" />
 
         <TextView
-            android:id="@+id/textViewForDate"
+            android:id="@+id/edit_text_ForDesc"
             android:layout_width="0dp"
-            android:textSize="20sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="Date" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp">
-
-        <TextView
-            android:id="@+id/descField"
-            android:layout_width="0dp"
-            android:textSize="10sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Описание:" />
-
-        <TextView
-            android:id="@+id/textViewForDesc"
-            android:layout_width="0dp"
-            android:textSize="20sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:text="name" />
+            tools:text="@tools:sample/lorem/random" />
 
     </LinearLayout>
 

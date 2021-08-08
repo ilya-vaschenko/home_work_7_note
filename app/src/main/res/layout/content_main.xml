@@ -10,7 +10,6 @@
 
     <FrameLayout
         android:id="@+id/fragmentContainerNoteList"
-        android:background="#80D8FF"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
