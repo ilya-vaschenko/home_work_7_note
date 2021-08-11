@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         return navigation;
     }
 
-    public com.example.home_work_7_note.Publisher getPublisher() {
+    public Publisher getPublisher() {
         return publisher;
     }
 
