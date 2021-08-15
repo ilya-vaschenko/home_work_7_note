@@ -18,14 +18,14 @@ import java.util.Date;
 public class NoteFragment extends Fragment {
     private static final String ARG_CARD_DATA = "Param_CardData";
 
-    private com.example.home_work_7_note.Note note;
-    private com.example.home_work_7_note.Publisher publisher;
+    private Note note;
+    private Publisher publisher;
 
     private TextInputEditText title;
     private TextInputEditText description;
     private DatePicker datePicker;
 
-    public static NoteFragment newInstance(com.example.home_work_7_note.Note note) {
+    public static NoteFragment newInstance(Note note) {
         NoteFragment fragment = new NoteFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_CARD_DATA, note);
@@ -49,7 +49,7 @@ public class NoteFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        com.example.home_work_7_note.MainActivity activity = (com.example.home_work_7_note.MainActivity) context;
+        MainActivity activity = (MainActivity) context;
         publisher = activity.getPublisher();
     }
 
@@ -83,11 +83,18 @@ public class NoteFragment extends Fragment {
         publisher.notifySingle(note);
     }
 
-    private com.example.home_work_7_note.Note collectCardData() {
+    private Note collectCardData() {
         String title = this.title.getText().toString();
         String description = this.description.getText().toString();
         Date date = getDateFromDatePicker();
-        return new com.example.home_work_7_note.Note(title, date, description);
+        if (note != null) {
+            Note answer;
+            answer = new Note(title, date, description);
+            answer.setId(note.getId());
+            return answer;
+        } else {
+            return new Note(title, date, description);
+        }
     }
 
     private Date getDateFromDatePicker() {

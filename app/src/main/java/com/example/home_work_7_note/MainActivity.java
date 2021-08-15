@@ -8,13 +8,13 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
     NoteSource noteSource;
     private Navigation navigation;
-    private com.example.home_work_7_note.Publisher publisher = new com.example.home_work_7_note.Publisher();
+    private Publisher publisher = new Publisher();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
-        noteSource = new NoteSourceImpl(this);
+        noteSource = new NoteSourceFirebaseImpl();
         navigation = new Navigation(getSupportFragmentManager());
 
         getNavigation().addFragment(NoteFragment.newInstance(), false);
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.fragmentContainerNoteList, NoteListFragment.newInstance(noteSource))
                 .commit();
- }
+    }
 
     private void initView() {
         initToolbar();
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-
     }
+
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();

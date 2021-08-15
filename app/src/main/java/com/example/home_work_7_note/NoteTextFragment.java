@@ -22,7 +22,7 @@ public class NoteTextFragment extends Fragment {
 
     TextView add_note_name;
     TextView add_note_desc;
-    com.example.home_work_7_note.Note note;
+    Note note;
 
     private TextView textViewNoteName;
     private TextView textViewNoteDescription;
@@ -30,7 +30,7 @@ public class NoteTextFragment extends Fragment {
     public NoteTextFragment() {
     }
 
-    public static NoteTextFragment newInstance(com.example.home_work_7_note.Note note) {
+    public static NoteTextFragment newInstance(Note note) {
         Bundle args = new Bundle();
         args.putString(ARG_NAME, note.getName());
         args.putString(ARG_DATE, note.getDate().toString());
@@ -48,7 +48,7 @@ public class NoteTextFragment extends Fragment {
             String name = getArguments().getString(ARG_NAME);
             String description = getArguments().getString(ARG_DESCRIPTION);
 
-            note = new com.example.home_work_7_note.Note(name, Calendar.getInstance().getTime(), description);
+            note = new Note(name, Calendar.getInstance().getTime(), description);
         }
     }
 
@@ -63,13 +63,11 @@ public class NoteTextFragment extends Fragment {
 
         isLand = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
-
         add_note_name = view.findViewById(R.id.edit_Text_For_Name);
         add_note_desc = view.findViewById(R.id.edit_text_ForDesc);
 
         return view;
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

@@ -29,6 +29,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         this.fragment = fragment;
     }
 
+    public void setDataSource(NoteSource dataSource){
+        this.dataSource = dataSource;
+        notifyDataSetChanged();
+    }
+
     public void setList(NoteSource dataSource) {
         this.dataSource = dataSource;
         notifyDataSetChanged();
@@ -40,14 +45,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
     @NonNull
     @Override
-    public NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NotesAdapter.NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
         return new NotesViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NotesViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull NotesAdapter.NotesViewHolder holder, int position) {
         holder.bind(dataSource.getNote(position));
 
         Log.d(TAG, String.valueOf(dataSource.getNote(position).getName()));
